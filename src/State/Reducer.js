@@ -184,6 +184,7 @@ export const setURLQuery = (props, git_url, selected_labels, selected_assignee) 
 export const setStateFromURLQueryString = (state, props, setValue) => {
   const params = new URLSearchParams(props.location.search);
   state.git_url = params.get('giturl');
+  state.token = params.get('token');
 
   const selected_labels = convertIDNamesStringToList(params.get('labels'));
   if (isValidVariable(selected_labels[0])) {
