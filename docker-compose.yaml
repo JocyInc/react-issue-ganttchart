@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    container_name: rig_app
+    build:
+      context: .
+    volumes:
+        - ./react-root.:/var/src/app/
+        - ./node-modules:/var/src/app/node_modules
+    ports:
+        - "3333:3000"
+volumes:
+  react-root:
+  node-modules:
